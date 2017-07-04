@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA4C2742-48C9-4969-9E0D-93525213C612}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContractFormalLanguage</RootNamespace>
+    <AssemblyName>ContractFormalLanguage</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ContractAddIn.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\Action.cs" />
+    <Compile Include="ConflictAnalysis\Automaton.cs" />
+    <Compile Include="ComplexActions\ChoiceAction.cs" />
+    <Compile Include="ComplexActions\ComplexAction.cs" />
+    <Compile Include="Actions\KnownAction.cs" />
+    <Compile Include="ComplexActions\ConcurrentAction.cs" />
+    <Compile Include="ComplexActions\IdentityAction.cs" />
+    <Compile Include="ComplexActions\SequentialAction.cs" />
+    <Compile Include="ComplexActions\SimpleAction.cs" />
+    <Compile Include="ComplexActions\EmptyAction.cs" />
+    <Compile Include="ConflictAnalysis\State.cs" />
+    <Compile Include="ConflictAnalysis\Transition.cs" />
+    <Compile Include="ConflictAnalyzer - Old.cs" />
+    <Compile Include="ConflictAnalysis\ConflictAnalyzer.cs" />
+    <Compile Include="ConflictAnalyzer - Newer but Old.cs" />
+    <Compile Include="Contracts\ComposedContract.cs" />
+    <Compile Include="Contracts\ConcurrentContract.cs" />
+    <Compile Include="Contracts\ConditionalContract.cs" />
+    <Compile Include="Contracts\Contract.cs" />
+    <Compile Include="Contracts\ContractFactory.cs" />
+    <Compile Include="Contracts\Permission.cs" />
+    <Compile Include="Contracts\Prohibition.cs" />
+    <Compile Include="Contracts\Obligation.cs" />
+    <Compile Include="Contracts\ReparationContract.cs" />
+    <Compile Include="Contracts\SatisfiedContract.cs" />
+    <Compile Include="Contracts\UnknownContract.cs" />
+    <Compile Include="Contracts\ViolatedContract.cs" />
+    <Compile Include="Parties\KnownParty.cs" />
+    <Compile Include="Parties\Party.cs" />
+    <Compile Include="Parties\UnknownParty.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Actions\UnknownAction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContractAddIn.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
